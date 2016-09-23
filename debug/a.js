@@ -1,6 +1,5 @@
 'use strict';
 
-const path = require('path');
 const templator = require('../index.js');
 
 const data = {
@@ -18,12 +17,10 @@ const data = {
   }
 };
 
-templator(
-  path.resolve(__dirname, 'src'),
-  path.resolve(__dirname, 'html'),
-  data
-).then(() => {
+templator('./debug/src', './tmp/html', data)
+.then(() => {
   console.log('Success!');
-}).catch((err) => {
+})
+.catch((err) => {
   console.dir(err.message);
 });
