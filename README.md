@@ -10,7 +10,7 @@ Lightweight template engine.
 
 * Replaces `{{> ./relative_path/file_name.ext}}` with recursively rendered content of the target file.
 
-* Recursively renders all files in the `srcFolder`, except files with names started with the `_` symbol, and places the rendered files in the `destFolder`.
+* Recursively renders all files in the `srcFolder`, except files with names starting with the `_` symbol, and places the rendered files in the `destFolder`.
 
 ## Installation
 
@@ -37,10 +37,10 @@ templator(srcFolder, destFolder, data)
 
 ### templator(srcFolder, destFolder, data)
 
-`srcFolder {String}` - Absolute path to the folder containing the templates.
+`srcFolder {String}` - Absolute or relative (to `process.cwd()`) path to the folder containing the templates.
 
-`destFolder {String}` - Absolute path to the folder the rendered files are saved in.
+`destFolder {String}` - Absolute or relative (to `process.cwd()`) path to the folder the rendered files to be saved in.
 
 `data {Object}` - A data object to be used to replace `{{property1.property2}}` placeholders.
 
-Returns `{Promise}`.
+Returns `{Promise<Void>}`.
